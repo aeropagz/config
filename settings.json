@@ -1,0 +1,133 @@
+{
+  // Disable telemetry
+  "telemetry.telemetryLevel": "off",
+  // Zen mode
+  "zenMode.fullScreen": false,
+  "zenMode.hideTabs": true,
+  "zenMode.centerLayout": false,
+  // Theming
+  "workbench.iconTheme": "city-lights-icons-vsc-light",
+  "editor.fontFamily": "Dank Mono",
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "Cascadia Mono",
+  "window.autoDetectColorScheme": true,
+  "workbench.colorTheme": "Palenight Operator",
+  "workbench.preferredLightColorTheme": "Tomorrow Operator Mono",
+  "workbench.preferredDarkColorTheme": "Palenight Operator",
+  "editor.codeLensFontSize": 13,
+  "editor.fontSize": 15,
+  "editor.lineHeight": 1.75,
+  "editor.suggestFontSize": 15,
+  "editor.suggestLineHeight": 28,
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.lineHeight": 1,
+  "debug.console.fontSize": 10,
+   // More minimal UI
+  "window.zoomLevel": 1,
+  "editor.minimap.enabled": false,
+  "editor.glyphMargin": false,
+  "editor.folding": false,
+  "editor.lineNumbers": "on",
+  "workbench.editor.showTabs": false,
+  "workbench.editor.pinnedTabSizing": "compact",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.welcomePage.walkthroughs.openOnInstall": false,
+  "breadcrumbs.enabled": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.lightbulb.enabled": false,
+  "editor.overviewRulerBorder": false,
+  "editor.renderLineHighlight": "line",
+  "editor.renderControlCharacters": false,
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  "volar.icon.splitEditors": false,
+   // Search
+  "search.smartCase": true,
+  "search.useIgnoreFiles": false,
+  "search.exclude": {
+    "**/vendor/*": true,
+    "**/public/*": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/package-lock.json": true,
+    "**/yarn.lock": true,
+  },
+  // Code
+  // Include "-" in word selection.
+  "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.wordWrap": "on",
+  "editor.tabCompletion": "on",
+  "explorer.openEditors.visible": 1,
+  "window.title": "${rootName}",
+  "files.watcherExclude": {
+    "**/.output/**": true,
+    "**/.yarn/**": true,
+    "**/node_modules/**": true,
+    "backend/vendor/**": true
+  },
+    "editor.semanticHighlighting.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.suggestSelection": "first",
+  "editor.suggest.showWords": false,
+  "emmet.showAbbreviationSuggestions": false,
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.suggest.completeFunctionCalls": true,
+  "editor.guides.indentation": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+
+  // own
+  "explorer.confirmDelete": false,
+  "files.autoSave": "afterDelay",
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "[json]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.confirmSync": false,
+  "vim.commandLineModeKeyBindings": [],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-o>": false,
+    "<C-w>": false,
+    "<C-left>": false,
+    "<C-right>": false
+
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["u"],
+      "after": [],
+      "commands": [
+        {
+          "command": "undo"
+        }
+      ]
+    },
+    {
+      "before": ["<C-r>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "redo"
+        }
+      ]
+    }
+  ]
+}
