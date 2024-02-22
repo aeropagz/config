@@ -1,0 +1,100 @@
+which ghci
+ghc
+chatGPTSession 
+:l ex1.hs 
+:r
+:l ex1.hs 
+:t f
+f [x:xs] = xs
+f [x:xs] = xs
+f [x:xs] = xs
+f [x:xs] = xs
+f [1,2]
+f [1,2]
+f [x:xs] = xs
+sequencee [Just 1, Just 2]
+sequencee [Just 1, Nothing, Just 2]
+:r
+:r
+:l ex1.hs 
+checkPassword
+:l ex1.hs 
+:l ex1.hs
+:l ex2.hs 
+testSubst 
+:l Subst
+testVars 
+:l Vars 
+testSubst 
+:r
+testSubst 
+:r
+testSubst 
+domain (single (VarName "12") (Var (VarName "12")))
+:r
+domain (single (VarName "12") (Var (VarName "12")))
+domain (single VarName("12") (Var (VarName "12")))
+domain (single "12" (Var "12"))
+domain (single "12" (Var "12"))
+testSubst 
+:l Subst 
+:r
+:r
+:r
+:r
+:r
+:r
+:r
+:r
+:r
+:r
+take 100 freshVars 
+:r
+take 100 freshVars 
+:r
+take 100 freshVars 
+:r
+take 100 freshVars 
+take 10 freshVars 
+:r
+take 10 freshVars 
+:r
+take 10 freshVars 
+:r
+:r
+testVars 
+:r
+testVars 
+:r
+testVars 
+:l Vars 
+:r
+pure (*) <*> [2] <*> [3]
+pure (*) <*> [2] <*> [3] <*> [2]
+pure (*) <*> [2] <*> [3] 
+:r
+cabal repl
+:r
+:r
+:r
+:r
+:R
+:r
+:r
+:r
+:R
+Empty == Empty
+Links 1 == Rechts 1
+Links 1 == Rechts 2
+Links 1 == Links 2
+Links 1 == Links 1
+:r
+:r
+:r
+:r
+:r
+:r
+:r
+:r
+:r
+:r
