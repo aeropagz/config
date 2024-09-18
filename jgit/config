@@ -1,0 +1,6 @@
+[filesystem "Eclipse Adoptium|21|/dev/sde"]
+	timestampResolution = 2500 nanoseconds
+	minRacyThreshold = 10707 microseconds
+[filesystem "Oracle Corporation|17.0.2|/dev/sde"]
+	timestampResolution = 2900 nanoseconds
+	minRacyThreshold = 16556 microseconds
