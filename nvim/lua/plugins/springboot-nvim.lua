@@ -2,7 +2,8 @@ return {
     "elmcgill/springboot-nvim",
     dependencies = {
         "neovim/nvim-lspconfig",
-        "mfussenegger/nvim-jdtls"
+        "mfussenegger/nvim-jdtls",
+        "nvim-tree/nvim-tree.lua"
     },
     config = function()
         -- gain acces to the springboot nvim plugin and its functions
