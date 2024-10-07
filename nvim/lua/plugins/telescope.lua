@@ -23,9 +23,17 @@ return {
             vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
             -- set a vim motion to <Space> + f + b to search Open Buffers
             vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind Existing [B]uffers' })
-            vim.keymap.set('n', "<leader>/", builtin.live_grep, {desc = "Grep (Root Dir)" })
-            vim.keymap.set('n', "<leader>:", "<cmd>Telescope command_history<cr>", {desc = "Command History" })
+            vim.keymap.set('n', "<leader>/", builtin.live_grep, { desc = "Grep (Root Dir)" })
+            vim.keymap.set('n', "<leader>:", "<cmd>Telescope command_history<cr>", { desc = "Command History" })
             vim.keymap.set('n', "<leader><space>", builtin.find_files, { desc = "Find Files (Root Dir)" })
+            vim.keymap.set('n', "<leader>,", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
+                { desc = "Switch buffer" })
+            vim.keymap.set('n', "<leader>fc", function()
+                builtin.find_files({ cwd = vim.fn.stdpath("config") })
+            end, { desc = "Find files in config" })
+            vim.keymap.set('n', "<leader>sc", function()
+                builtin.live_grep({ cwd = vim.fn.stdpath("config") })
+            end, { desc = "Find files in config" })
         end
     },
     {
