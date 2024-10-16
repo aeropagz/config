@@ -28,6 +28,6 @@ return {
 
         -- set a vim motion to close the debugging ui
         vim.keymap.set("n", "<leader>dc", dapui.close, {desc = "[D]ebug [C]lose"})
-        vim.keymap.set("n", "<leader>du", dapui.close, {desc = "[D]ebug Toggle [U]i"})
+        vim.keymap.set("n", "<leader>du", dapui.toggle, {desc = "[D]ebug Toggle [U]i"})
     end
 }

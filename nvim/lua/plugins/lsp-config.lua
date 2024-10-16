@@ -12,7 +12,7 @@ return {
         config = function()
             -- ensure that we have lua language server, typescript launguage server, java language server, and java test language server are installed
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "ts_ls", "jdtls", "yamlls", "volar", "gopls" },
+                ensure_installed = { "lua_ls", "ts_ls", "jdtls", "yamlls", "volar", "gopls", "eslint" },
             })
         end,
     },
@@ -43,7 +43,7 @@ return {
 
             lspconfig.gopls.setup({
                 capabilities = capabilities,
-                gofumpt = true
+                gofumpt = true,
             })
 
             -- setup the lua language server
@@ -102,6 +102,57 @@ return {
                         hybridMode = false,
                     },
                 },
+            })
+
+            local customizations = {
+                { rule = "style/*",   severity = "off", fixable = true },
+                { rule = "format/*",  severity = "off", fixable = true },
+                { rule = "*-indent",  severity = "off", fixable = true },
+                { rule = "*-spacing", severity = "off", fixable = true },
+                { rule = "*-spaces",  severity = "off", fixable = true },
+                { rule = "*-order",   severity = "off", fixable = true },
+                { rule = "*-dangle",  severity = "off", fixable = true },
+                { rule = "*-newline", severity = "off", fixable = true },
+                { rule = "*quotes",   severity = "off", fixable = true },
+                { rule = "*semi",     severity = "off", fixable = true },
+            }
+
+            lspconfig.eslint.setup({
+                filetypes = {
+                    "javascript",
+                    "javascriptreact",
+                    "javascript.jsx",
+                    "typescript",
+                    "typescriptreact",
+                    "typescript.tsx",
+                    "vue",
+                    "html",
+                    "markdown",
+                    "json",
+                    "jsonc",
+                    "yaml",
+                    "toml",
+                    "xml",
+                    "gql",
+                    "graphql",
+                    "astro",
+                    "svelte",
+                    "css",
+                    "less",
+                    "scss",
+                    "pcss",
+                    "postcss",
+                },
+                settings = {
+                    -- Silent the stylistic rules in you IDE, but still auto fix them
+                    rulesCustomizations = customizations,
+                },
+                on_attach = function(client, bufnr)
+                    vim.api.nvim_create_autocmd("BufWritePre", {
+                        buffer = bufnr,
+                        command = "EslintFixAll",
+                    })
+                end,
             })
 
             -- Set vim motion for <Space> + c + h to show code documentation about the code the cursor is currently over if available
