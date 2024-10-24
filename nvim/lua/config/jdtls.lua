@@ -101,20 +101,38 @@ local function java_keymaps()
 	vim.keymap.set(
 		"n",
 		"<leader>Jt",
-		"<Cmd> lua require('jdtls').test_nearest_method()<CR>",
+		"<Cmd> lua require('jdtls.dap').test_nearest_method()<CR>",
 		{ desc = "[J]ava [T]est Method" }
 	)
 	-- Set a Vim motion to <Space> + <Shift>J + t to run the test method that is currently selected in visual mode
 	vim.keymap.set(
 		"v",
 		"<leader>Jt",
-		"<Esc><Cmd> lua require('jdtls').test_nearest_method(true)<CR>",
+		"<Esc><Cmd> lua require('jdtls.dap').test_nearest_method(true)<CR>",
 		{ desc = "[J]ava [T]est Method" }
 	)
 	-- Set a Vim motion to <Space> + <Shift>J + <Shift>T to run an entire test suite (class)
-	vim.keymap.set("n", "<leader>JT", "<Cmd> lua require('jdtls').test_class()<CR>", { desc = "[J]ava [T]est Class" })
+	vim.keymap.set(
+		"n",
+		"<leader>JT",
+		"<Cmd> lua require('jdtls.dap').test_class()<CR>",
+		{ desc = "[J]ava [T]est Class" }
+	)
 	-- Set a Vim motion to <Space> + <Shift>J + u to update the project configuration
 	vim.keymap.set("n", "<leader>Ju", "<Cmd> JdtUpdateConfig<CR>", { desc = "[J]ava [U]pdate Config" })
+
+	vim.keymap.set(
+		"n",
+		"<leader>tg",
+		"<Cmd> lua require('jdtls.tests').goto_subjects()<CR>",
+		{ desc = "[T]est [g]o to Testfile" }
+	)
+	vim.keymap.set(
+		"n",
+		"<leader>tc",
+		"<Cmd> lua require('jdtls.tests').generate()<CR>",
+		{ desc = "[T]est [C]reate" }
+	)
 end
 
 local function setup_jdtls()
@@ -215,10 +233,11 @@ local function setup_jdtls()
 			completion = {
 				-- When using an unimported static method, how should the LSP rank possible places to import the static method from
 				favoriteStaticMembers = {
-					"org.hamcrest.MatcherAssert.assertThat",
+					"org.assertj.core.api.Assertions.assertThat",
 					"org.hamcrest.Matchers.*",
 					"org.hamcrest.CoreMatchers.*",
 					"org.junit.jupiter.api.Assertions.*",
+					"org.hamcrest.MatcherAssert.assertThat",
 					"java.util.Objects.requireNonNull",
 					"java.util.Objects.requireNonNullElse",
 					"org.mockito.Mockito.*",
@@ -289,7 +308,7 @@ local function setup_jdtls()
 		java_keymaps()
 
 		-- Setup the java debug adapter of the JDTLS server
-		require("jdtls.dap").setup_dap()
+		require("jdtls").setup_dap()
 
 		-- Find the main method(s) of the application so the debug adapter can successfully start up the application
 		-- Sometimes this will randomly fail if language server takes to long to startup for the project, if a ClassDefNotFoundException occurs when running
